@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-EN" xml:lang="en-EN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="theodcr" />
+  <meta name="dcterms.date" content="2020-06-05" />
+  <title>👨‍💻 My keyboard-driven working environment</title>
+  <base href="https://theodcr.github.io/">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="header">
+<a class="link me" href="en/index.html">theodcr</a>
+<div class="nav">
+<a class="link" href="index.html">About</a>
+</div>
+</div>
+<hr>
+<header id="title-block-header">
+<h2 class="title">👨‍💻 My keyboard-driven working environment</h2>
+<p class="date">Published on 5 June 2020</p>
+<p class="date">Updated on 13 June 2020</p>
+</header>
+<p>In this post I detail how I use my computer every day at work. I am a Python developer and data scientist. I like tools that get the job done well without requiring too much tinkering, and I try to use the keyboard as much as possible, I like the speed and precision of typing. I currently work on Linux, but I have previously used this workflow of MacOS, and most software presented below is available for Windows too (I use Windows at home for some other specific software).</p>
+<h3 id="desktop-regolith">Desktop: Regolith</h3>
+<p>I use Ubuntu with the <a href="https://regolith-linux.org/">Regolith</a> desktop environment, which is in summary GNOME + i3. I recommend it to anyone looking for a keyboard-driven desktop environment that is easy to install and configure.</p>
+<p>I map the Caps Lock key to Escape, as I use this key much more often, notably for Vim.</p>
+<h3 id="editor-neovim">Editor: Neovim</h3>
+<p>I learnt <a href="https://www.vim.org/">Vim</a> during my first development internship in 2015, while writing numerical simulation code in Fortran. I first used gedit which comes with Ubuntu and is very good, but I wanted to avoid having to move my hand to the arrow keys on the right of the keyword. Vim gave me that and much more, it didn’t take long to convince me. I since moved to Python as my main language, and after trying Emacs, VSCode and PyCharm multiple times, I keep coming back to Vim. No other editor seems as snappy, complete and customizable. VSCode is slow, PyCharm eats my machine, Emacs crashes, but Vim works. I haven’t found another editor that can record macros, use regex for search and replace, store text in multiple registers, or repeat the last action with one key. These are basic Vim features (okay Emacs certainly has these features too). Vim also has a very low typing latency I have never seen anywhere else. While Vim-like workflows in other editors are noble efforts, none delivers all of its advanced features or offers a comparable flexibility. Generally, Vim makes me feel like it follows my will, not the other way around. I also appreciate being close to the terminal.</p>
+<p>Note: I had a very enjoyable experience with <a href="https://github.com/hlissner/doom-emacs">Doom Emacs</a>, the light Emacs distribution suited for Vim users. It felt feature-full, fast enough and more clever than Spacemacs. However I gave up because of the crashes (however rare) and various Emacs quirks causing some discomfort.</p>
+<p>I switched to <a href="https://neovim.io/">Neovim</a> in 2018 for its newer features, active ecosystem and generally more stable and pleasant experience. I don’t use many plugins, but they greatly enhance my workflow:</p>
+<ul>
+<li><a href="https://github.com/vimwiki/vimwiki">vimwiki</a> (on dev branch) for note taking (see <a href="#vimwiki">specific section</a> below)</li>
+<li><a href="https://github.com/liuchengxu/vim-clap">vim-clap</a> for fuzzy searching anything (it provides features similar to fzf.vim, I prefer vim-clap’s feel and appreciate its easy installation on Windows)</li>
+<li><a href="https://github.com/vim-airline/vim-airline">vim-airline</a> and <a href="https://github.com/morhetz/gruvbox">gruvbox</a> for UI</li>
+<li><a href="https://github.com/tpope/vim-sleuth">vim-sleuth</a> for smart tab widths</li>
+<li><a href="https://github.com/tpope/vim-fugitive">vim-fugitive</a> for git integration</li>
+<li><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a> for the whole IDE experience as available in VSCode: jump to definition, documentation, code linting, refactoring. It works really well for Python.</li>
+</ul>
+<h3 id="terminal-kitty-fish">Terminal: kitty + fish</h3>
+<p>I like to live in the terminal, the keyboard interface par excellence. My main terminal application is <a href="https://sw.kovidgoyal.net/kitty/">kitty</a>, it is easy to install, easy to configure, efficient and stable. It provides all the features I need: beautiful font rendering, panes, tabs, simple sessions, and powerful keyboard shortcuts. I use it like a bare-bones tmux, with a predefined ready-to-use session config that creates tabs and panes for my projects.</p>
+<p>I have used bash for a long time and still do, but my main shell is <a href="https://fishshell.com/">fish</a> now. My choice was driven by the same motivations as my other tools: easy to install and configure, very practical and useful out of the box. Its auto-completion and syntax highlighting are probably its best selling points. It is simply very comfortable to use as my main command-line driver. And as for general efficiency in the terminal, a handful of bash and fish aliases goes a long way.</p>
+<h3 id="vimwiki">Notes and knowledge base: vimwiki and pandoc</h3>
+<p>One thing that definitely helps me in my work every day is my personal knowledge base. It began with a few markdown files and rapidly became a large wiki that I use and write with the <a href="https://github.com/vimwiki/vimwiki">vimwiki</a> Vim plugin. The plugin mainly helps with the navigation between files, defining tags, tables of contents etc. I chose to use vimwiki’s own markup syntax, I find it light and pleasant (small example: I like that bold syntax only requires one character as opposed to two in Markdown), and better supported by the plugin (at the time). I don’t think I will bother moving my wiki back to Markdown or to another format soon, it is too big.</p>
+<p>However, I tried to use Emacs Org mode several times to take notes and evaluate its usage for my knowledge base. It is renowned as the best tool for that among the Vim and Emacs communities. But I was just overwhelmed by its size and possibilities (and Emacs always ended up crashing or doing something unexpected, I probably wasn’t patient enough). Vimwiki + some mappings and shortcuts gives me all I need to maintain my knowledge base, some work-related notes, and my day-to-day work diary. I write what I do at work every day, it helps thinking through complex problems and it keeps records. It’s definitely another great help, but again I don’t need advanced Org mode features for that.</p>
+<p><a href="https://pandoc.org">Pandoc</a> works well for any conversion of my notes or knowledge base to HTML files (and for building this blog too). Adding a style sheet like <a href="https://github.com/kognise/water.css">water.css</a> immediately creates beautiful pages.</p>
+<h3 id="web-firefox-vimium">Web: Firefox + Vimium</h3>
+<p>I went back to Firefox in 2017 with the release of their newer engine, and I haven’t looked back. It’s fast, and I much prefer their approach to web browsing. I use the <a href="https://github.com/philc/vimium">Vimium</a> plugin to navigate the web with vim-like key bindings. I tested several other plugins for this, I found Vimium to be the most straightforward.</p>
+<h3 id="data-science-classic-jupyter">Data science: classic Jupyter</h3>
+<p>I have a need for an interactive environment to prototype code and algorithms, explore data, and design visualizations. I have tried many solutions (Jupyter, VSCode, PyCharm, Vim and IPython etc) and still haven’t found the perfect one, that would be the topic of a whole other blog post.</p>
+<p>I have used <a href="https://github.com/jupyterlab/jupyterlab">JupyterLab</a> and its rather well-working <a href="https://github.com/jwkvam/jupyterlab-vim">vim keybindings plugin</a>. I even wrote a <a href="https://github.com/theodcr/jupyterlab-gruvbox">gruvbox theme</a> for it. But the heaviness and quirks of JupyterLab have lead me back to the classic <a href="https://github.com/jupyter/notebook">Jupyter Notebook</a> recently. It is the fastest, most stable and predictable notebook environment I have found. I don’t spend as much time in the notebooks as before, so I’m okay with something simple. I should look into its <a href="https://github.com/lambdalisue/jupyter-vim-binding">vim keybindings</a>.</p>
+</body>
+</html>

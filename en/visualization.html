@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-EN" xml:lang="en-EN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="theodcr" />
+  <meta name="dcterms.date" content="2020-06-11" />
+  <title>📊 Thoughts on data visualization in Python</title>
+  <base href="https://theodcr.github.io/">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="header">
+<a class="link me" href="en/index.html">theodcr</a>
+<div class="nav">
+<a class="link" href="index.html">About</a>
+</div>
+</div>
+<hr>
+<header id="title-block-header">
+<h2 class="title">📊 Thoughts on data visualization in Python</h2>
+<p class="date">Published on 11 June 2020</p>
+<p class="date">Updated on 13 June 2020</p>
+</header>
+<p>I love beautiful visualizations. For the last ~2 years, I have spent some time looking for the best data visualization tools in Python. I have tested the most well-known libraries in this large and diverse ecosystem, but I have yet to find the perfect definitive one. Here are some thoughts about practicing data visualization Python. For a deeper dive on the subject, you will find some links at the end of this post.</p>
+<ul>
+<li><a href="https://matplotlib.org/">Matplotlib</a>, <a href="https://seaborn.pydata.org/">Seaborn</a> and <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">Pandas</a> are here to stay. They offer rich static visualizations, are easy to install and to use everywhere. Their API might not be the most innovative, but they are fast and convenient for exploratory data analysis. A bit of tweaking can make the plots beautiful. The main drawback is their static nature.</li>
+<li><a href="https://plotly.com/python/">Plotly</a> is very good, rich, dynamic, built on top of D3. Their recent addition of Plotly Express, a shorter API similar to Seaborn, was clever (no more need for <a href="https://github.com/santosjorge/cufflinks">Cufflinks</a> which emulated the Pandas API for Plotly). The documentation is quite good, making it accessible to many. It is a very solid choice for dynamic visualizations.</li>
+<li><a href="https://altair-viz.github.io/">Altair</a> is complex but very powerful. It is mainly a Python API for <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>, so it is sane but requires some learning. Its user guide and examples are great, but the detailed documentation is automatically generated, so not that useful. Altair is capable of remarkable advanced interactions I have not been able to achieve easily with any other tool. Sadly the graphs it generates are too heavy because they carry the whole dataset. However they are gorgeous out of the box (the most beautiful I have seen).</li>
+<li><a href="https://bokeh.org/">Bokeh</a> and its wrappers <a href="http://holoviews.org/">HoloViews</a> and <a href="https://hvplot.pyviz.org/">hvplot</a> are powerful too. Capable of many things, but in my experience not as flexible as Plotly and not as beautiful as Altair.</li>
+<li><a href="https://github.com/spotify/chartify">Chartify</a> by Spotify is similar to Seaborn or Plotly Express, but only offers static plots using Bokeh as a backend. The API and the plots look nice, but the scope seems limited to data scientists building standard visualizations for communication.</li>
+<li><a href="https://github.com/bloomberg/bqplot">bqplot</a> is a bit different: it lives in the Jupyter ecosystem and offers vast possibilities for interaction. The documentation consists primarily of examples, so it can be difficult to use, and its syntax is complex. The defaults don’t look great. This is restricted to specific use cases for advanced interactive notebooks, notably paired with Jupyter’s <a href="https://github.com/voila-dashboards/voila">voila</a>.</li>
+<li>I haven’t played much with <a href="https://plotnine.readthedocs.io/en/stable/">plotnine</a>, the Python library that is probably the closest to R’s very respected <a href="https://ggplot2.tidyverse.org/">ggplot2</a>. Its promise is great, but it works on Matplotlib so it’s only static. The poor documentation (which invites users to consult ggplot2’s documentation as a complement) makes it hard to start using it for complex plots.</li>
+<li>For building dashboards in Python, <a href="https://dash.plotly.com/">Dash</a> by Plotly is becoming the king. It is powerful, immediately looks good, and offers a plethora of components and possibilities for interaction and customization. I have only very briefly used the alternative <a href="https://panel.holoviz.org/index.html">Panel</a> made by the people from HoloViews. It looks a bit rough but promises a lot, namely being able to directly use any visualization library. The way the callbacks are defined seemed a bit difficult to grasp.</li>
+</ul>
+<hr />
+<p>Some resources on the Python data visualization ecosystem:</p>
+<ul>
+<li>The talk <a href="https://www.youtube.com/watch?v=FytuB8nFHPQ">The Python Visualization Landscape at PyCon 2017</a> by Jake VanderPlas. It may be old but it gives an idea of how many possibilities there is.</li>
+<li>The article [Python Data Visualization 2018: Why So Many Libraries?] published by Anaconda, and its <a href="https://news.ycombinator.com/item?id=18469930">discussion</a> on Hacker News.</li>
+<li>The impressive and probably comprehensive <a href="https://pyviz.org/tools.html">list of tools</a> maintained by PyViz.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-EN" xml:lang="en-EN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="theodcr" />
+  <meta name="dcterms.date" content="2020-06-06" />
+  <title>🧮 Dataframes and their APIs in Python</title>
+  <base href="https://theodcr.github.io/">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="header">
+<a class="link me" href="en/index.html">theodcr</a>
+<div class="nav">
+<a class="link" href="index.html">About</a>
+</div>
+</div>
+<hr>
+<header id="title-block-header">
+<h2 class="title">🧮 Dataframes and their APIs in Python</h2>
+<p class="date">Published on 6 June 2020</p>
+<p class="date">Updated on 13 June 2020</p>
+</header>
+<p>The tool used to query, filter, alter and aggregate data is one of the most important in a data scientist’s or engineer’s toolkit. In this post I deliver my opinion on those I have experience with, which are mostly in the Python ecosystem.</p>
+<p>Python is very probably the most common programming language for data science in 2020. And the <a href="https://pandas.pydata.org/">Pandas</a> library has been the king of data manipulation in Python for some time. It is very versatile and comes with all the features needed to perform data science on a single machine. It is however renowned for its confusing API, and how there are too many ways to perform any single task. At first it feels easy and powerful, but one can write very inefficient, inelegant and unmaintainable code without first committing oneself to really learn about Pandas. After reading about it and playing with it for some time, any developer or data scientist can write elegant Pandas code for any situation, but many don’t seem to spend the required time and energy.</p>
+<p>This is sadly a bad aspect of Pandas. It is definitely getting better, notably with the recent effort for the 1.0 release. The API documentation is now comprehensive, but it still lacks some advanced examples on many topics. I recommend some additional material to learn about Pandas:</p>
+<ul>
+<li>For beginners: the section on Pandas in the <a href="https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html">Python Data Science Handbook</a> by Jake VanderPlas, a reference in the Python data science space. After using Pandas for months, I learnt many things for this chapter.</li>
+<li>For advanced users: the blog posts <a href="https://tomaugspurger.github.io/modern-1-intro">Modern Pandas</a> by Tom Augspurger, one of the lead developers of Pandas.</li>
+</ul>
+<p>Seeing that Pandas is often misused and hard to know well, we can look at alternatives. Some big data projects at work have been the occasion to use the <a href="https://spark.apache.org/">Spark</a> framework. Spark is heavy, not well documented, and overall a burden to run. However, it offers a very nice API, notably through its Python bindings (PySpark). This functional API feels like translating SQL into Python, instead of learning something completely new like Pandas. It is easy to write elegant and readable PySpark code, reading it out loud without much knowledge of Spark will directly tell you what it does. One of the notable advantage over Pandas is that Spark doesn’t use a dataframe index, only columns. The index system is a large part of what is complex but necessary to learn in Pandas.</p>
+<p>Note: I have used <a href="https://dask.org/">Dask</a> a bit to run big data workloads easily in Python. Its API follows Pandas so it is perfectly suited for developers experienced with Pandas. I liked it and would generally prefer it to Spark. Sadly Spark is standard in enterprise big data platforms.</p>
+<p>In 2019, the company behind Spark, Databricks, announced <a href="https://github.com/databricks/koalas">Koalas</a>, which allows writing code with the Pandas API and run it on Spark. I don’t want that, I want to use the Spark API to run Pandas. I don’t need Spark, my data isn’t that big and it is a burden to run, I need Pandas. But my team and I need a better API than the Pandas API to work together.</p>
+<p>So I’ve heard about the statistical programming language R, and especially its <a href="https://www.tidyverse.org/">tidyverse</a> ecosystem and its <a href="https://dplyr.tidyverse.org/">dplyr</a> library for data manipulation. It looks good, but it is known for its poor performance, and I would greatly prefer something running in Python. Several people have tried to design a Python API that is close to dplyr and runs Pandas behind the hood. In 2020 <a href="https://github.com/machow/siuba">siuba</a> seems to be the only one that has potential and is actively developed. It is still very incomplete, but I keep my eye on it.</p>
+<p>I haven’t used <a href="https://github.com/modin-project/modin">Modin</a> or <a href="https://github.com/vaexio/vaex">Vaex</a>, both are Python libraries for high-performance data manipulation. They tend to stay close to the Pandas API like Dask.</p>
+<p>At the end of the day, no tool beats Pandas in terms of availability and versatility in the Python space, not yet and probably never. The best bet is certainly to help it grow and mature, and help people learn and use it better.</p>
+</body>
+</html>

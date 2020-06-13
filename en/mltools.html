@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-EN" xml:lang="en-EN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="theodcr" />
+  <meta name="dcterms.date" content="2020-06-06" />
+  <title>🧪 Thoughts on machine learning in Python</title>
+  <base href="https://theodcr.github.io/">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="header">
+<a class="link me" href="en/index.html">theodcr</a>
+<div class="nav">
+<a class="link" href="index.html">About</a>
+</div>
+</div>
+<hr>
+<header id="title-block-header">
+<h2 class="title">🧪 Thoughts on machine learning in Python</h2>
+<p class="date">Published on 6 June 2020</p>
+<p class="date">Updated on 13 June 2020</p>
+</header>
+<p>I have experience in developing “classical” machine learning solutions (not much in deep learning). This posts gives some thoughts on machine learning tools. My thoughts on machine learning in general would be the topic of another post.</p>
+<ul>
+<li>Use Python, don’t think about using Scala and its Spark framework. I haven’t really tried Julia, it seems nice for scientists but I can’t say. However Python’s large language ecosystem is a major advantage.</li>
+<li><a href="https://scikit-learn.org/stable/index.html">Scikit-learn</a> is the king of machine learning on Python. When an algorithm or processing method is added to Scikit-learn, I consider it mature and ready to use from exploration to production. The documentation is an excellent learning resource too.</li>
+<li>Gradient boosting libraries are an exception: <a href="https://xgboost.ai/">XGBoost</a> and <a href="https://github.com/Microsoft/LightGBM">LightGBM</a> are great tools that provide powerful learning algorithms and efficient implementations. LightGBM has notably been very convenient in my experience. It’s an easy-to-plug algorithm that quickly gives a good model and insight on the predictive power of the data in many situations.</li>
+<li>Grid search is an important part of most machine learning projects, but the open source tooling is still lacking. Scikit-learn’s solution is simple but inefficient for big workloads, as it will repeat the same computations many times. Dask solves that, but its implementation is less versatile (I failed to use a custom dataset splitting method for example). And neither is designed for interrupting and starting again a long and intensive grid search. The best grid search tool I have used is still the one I wrote for my needs at work. Other solutions like <a href="https://ray.readthedocs.io/en/latest/tune.html">Tune</a> seemed not usable and mature enough. I haven’t taken the time to look at search optimization libraries.</li>
+<li>In the same idea, automated machine learning tooling is lacking too. The most practical solutions in Python like <a href="https://automl.github.io/auto-sklearn/master/index.html">auto-sklearn</a> or <a href="https://github.com/EpistasisLab/tpot">tpot</a> are simply mixing a bunch of models from Scikit-learn hoping to get something out of it. I admit the AutoML space is still young and seems dominated by proprietary solutions.</li>
+</ul>
+</body>
+</html>
