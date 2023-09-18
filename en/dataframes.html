@@ -8,14 +8,6 @@
   <meta name="dcterms.date" content="2020-06-06" />
   <title>🧮 Dataframes and their APIs in Python</title>
   <base href="https://theodcr.github.io/">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-  </style>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -31,6 +23,7 @@
 <p class="date">Published on 6 June 2020</p>
 <p class="date">Updated on 13 June 2020</p>
 </header>
+<p><strong>Note:</strong> As of 2023 there is a tool that fills most of the requests detailed in this post: <a href="https://www.pola.rs">Polars</a>, an efficient dataframe library, easy to install, with a great API.</p>
 <p>The tool used to query, filter, alter and aggregate data is one of the most important in a data scientist’s or engineer’s toolkit. In this post I deliver my opinion on those I have experience with, which are mostly in the Python ecosystem.</p>
 <p>Python is very probably the most common programming language for data science in 2020. And the <a href="https://pandas.pydata.org/">Pandas</a> library has been the king of data manipulation in Python for some time. It is very versatile and comes with all the features needed to perform data science on a single machine. It is however renowned for its confusing API, and how there are too many ways to perform any single task. At first it feels easy and powerful, but one can write very inefficient, inelegant and unmaintainable code without first committing oneself to really learn about Pandas. After reading about it and playing with it for some time, any developer or data scientist can write elegant Pandas code for any situation, but many don’t seem to spend the required time and energy.</p>
 <p>This is sadly a bad aspect of Pandas. It is definitely getting better, notably with the recent effort for the 1.0 release. The API documentation is now comprehensive, but it still lacks some advanced examples on many topics. I recommend some additional material to learn about Pandas:</p>
