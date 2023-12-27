@@ -23,6 +23,8 @@ h4,
 h5,
 h6 {
   margin: 5px 0 5px 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.02rem;
 }
 a:hover {
   text-decoration: underline;
@@ -37,6 +39,8 @@ center {
 .header {
   display: flex;
   justify-content: space-between;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.02rem;
 }
 .me {
   font-size: xx-large;
@@ -51,8 +55,4 @@ center {
 }
 .date {
   font-style: italic;
-}
-.sans {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -.02rem;
 }
