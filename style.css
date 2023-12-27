@@ -2,7 +2,7 @@ body {
   font-family: "Lora", "Minion Pro", Palatino, Georgia, serif;
   line-height: 1.5;
   max-width: 700px;
-  background-color: #efefef;
+  background-color: white;
   margin: auto;
   padding: 10px;
   text-rendering: optimizeLegibility;
