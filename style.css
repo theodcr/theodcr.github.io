@@ -3,6 +3,7 @@ body {
   line-height: 1.5;
   max-width: 700px;
   background-color: white;
+  color: #333;
   margin: auto;
   padding: 10px;
   text-rendering: optimizeLegibility;
