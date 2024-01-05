@@ -7,7 +7,6 @@ body {
   margin: auto;
   padding: 10px;
   text-rendering: optimizeLegibility;
-  text-align: justify;
 }
 img {
   max-width: 100%;
@@ -33,6 +32,9 @@ a:hover {
 a {
   text-decoration: none;
   color: #0076d1;
+}
+p {
+  text-align: justify;
 }
 center {
   text-align: center;
