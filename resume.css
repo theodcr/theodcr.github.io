@@ -49,6 +49,7 @@ a:active, a:hover {
 }
 .icon-links {
   text-align: center;
+  padding: 0;
 }
 .icon-links .icon-link-item {
   display: inline-block;
