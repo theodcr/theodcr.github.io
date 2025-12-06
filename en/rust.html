@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-EN" xml:lang="en-EN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="theodcr" />
+  <meta name="dcterms.date" content="2025-12-06" />
+  <title>⚙️ Learning Rust</title>
+  <base href="https://theodcr.github.io/">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,800,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="header">
+<a class="link me" href="en/index.html">theodcr</a>
+<div class="nav">
+<a class="link" href="index.html">About</a>
+</div>
+</div>
+<hr>
+<header id="title-block-header">
+<h2 class="title">⚙️ Learning Rust</h2>
+<p class="date">Published on 6 December 2025</p>
+<p class="date">Updated on 6 December 2025</p>
+</header>
+<p>After years of using CLI tools and Python libraries implemented in Rust, I wanted to learn what all this Rust fuss is about. I have much respect for the performance and stability of the Rust programs I use (such as the <a href="https://helix-editor.com">Helix</a> editor, the <a href="https://docs.astral.sh/ruff/">Ruff</a> and <a href="https://docs.astral.sh/uv/">uv</a> Python tools), I had heard intriguing things about the language, and at first glance I had failed to understand the little Rust code I had read.</p>
+<p>Also frustrations with the programming languages I use every day (Python and TypeScript) motivated me to take a look at something different; albeit very different in this case, because Rust is oriented towards system programming.</p>
+<p>So time to learn Rust. I opted for the old-fashioned way: reading the <a href="https://doc.rust-lang.org/book/">Rust Book</a> and doing the <a href="https://rustlings.rust-lang.org/">Rustlings</a> exercices alongside.</p>
+<p>Here are some general notes and impressions I got from learning Rust (still ongoing):</p>
+<ul>
+<li>It can be seen as primarily imperative, but the data flow focused on immutability and the functional features make it feel elegant and well thought.</li>
+<li>Abstractions via generics and traits are just as much object-oriented programming as you want for such a low-level language.</li>
+<li>Ownership concepts are central to gorking the language, however they are really approachable and explain much of the power behind Rust.</li>
+<li>When it compiles, it means the data flow is good and robust and that the runtime will work exactly as intended in the best way possible.</li>
+<li>This means that, yes, it’s complex to implement anything in Rust because we must tell the compiler everything we want to do, but successful compilation gives great assurance about the program quality.</li>
+<li>The type system allows avoiding many checks at runtime.</li>
+<li>Pattern matching is a very important feature: almost everything about branching (via enums), error handling (via Result) and absent values (via Option) use pattern matching; it avoids lots of bugs.</li>
+<li>You need significant experience to be fluent in the language and easily translate what is on your mind into code.</li>
+</ul>
+</body>
+</html>
